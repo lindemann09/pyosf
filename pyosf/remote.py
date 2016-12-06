@@ -21,13 +21,8 @@ import json
 import datetime
 import time
 import hashlib
-try:
-    from psychopy import logging
-except ImportError:
-    import logging
-from . import constants
+from . import constants, exceptions, logging
 from .tools import dict_from_list, find_by_key
-from . import exceptions
 
 # for the status of the PushPullThread
 NOT_STARTED = 0

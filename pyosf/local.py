@@ -17,11 +17,7 @@ from datetime import datetime
 import json
 import hashlib
 from . import constants
-
-try:
-    from psychopy import logging
-except ImportError:
-    import logging
+from . import logging
 
 
 class LocalFiles(object):
