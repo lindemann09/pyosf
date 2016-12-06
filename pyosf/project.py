@@ -17,13 +17,8 @@ Created on Sun Feb  7 21:31:15 2016
 from __future__ import absolute_import, print_function
 import os
 import sys
-try:
-    from psychopy import logging
-except:
-    import logging
-from . import remote, local, sync
 import json
-
+from . import remote, local, sync, logging
 PY3 = sys.version_info > (3,)
 
 

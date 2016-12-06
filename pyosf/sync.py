@@ -15,13 +15,11 @@ from __future__ import absolute_import, print_function
 from .constants import SHA
 import copy
 import os
+from types import FunctionType
 import shutil
 import weakref
-try:
-    from psychopy import logging
-except ImportError:
-    import logging
 from .tools import dict_from_list
+from . import logging
 
 """
 Resolutions table
@@ -247,7 +245,7 @@ class Changes(object):
         proj.index = proj.local.index
         self._set_empty()
         proj.save()
-        if hasattr(logging, 'flush'):  # psychopy.logging has control of flush
+        if isinstance(logging.flush, FunctionType): # e.g. psychopy.logging has control of flush
             logging.flush()
 
     def analyze(self):
